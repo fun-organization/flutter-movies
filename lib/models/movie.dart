@@ -33,12 +33,18 @@ class Movie {
   double voteAverage;
   int voteCount;
 
-  get fullPosterImg{
+  get fullPosterImg {
+    if (posterPath != null) {
+      return 'https://image.tmdb.org/t/p/w500${this.posterPath}';
+    }
+    return 'https://i.stack.imgur.com/GNhxO.png';
+  }
 
-      if(posterPath !=null) {
-        return 'https://image.tmdb.org/t/p/w500${this.posterPath}';
-      }
-      return 'https://i.stack.imgur.com/GNhxO.png';
+  get fullBackdropPath {
+    if (backdropPath != null) {
+      return 'https://image.tmdb.org/t/p/w500${this.backdropPath}';
+    }
+    return 'https://i.stack.imgur.com/GNhxO.png';
   }
 
   factory Movie.fromJson(String str) => Movie.fromMap(json.decode(str));

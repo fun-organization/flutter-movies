@@ -13,7 +13,7 @@ class AppState extends StatelessWidget {
   Widget build(BuildContext context) {
     return MultiProvider(
       providers: [
-        ChangeNotifierProvider(create: ( _ ) => MoviesProvider(), lazy: false),
+        ChangeNotifierProvider(create: (_) => MoviesProvider(), lazy: false),
       ],
       child: MyApp(),
     );
@@ -27,19 +27,16 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       title: 'Movies App',
       initialRoute: 'home',
-      routes: {
-        'home': ( _ ) => HomeScreen(),
-        'details': ( _ ) => DetailsScreen()
-      },
+      routes: {'home': (_) => HomeScreen(), 'details': (_) => DetailsScreen()},
       theme: ThemeData.dark().copyWith(
         appBarTheme: const AppBarTheme(
           color: Colors.red,
           // shadowColor: Colors.pink,
           elevation: 7,
-        ), 
+        ),
         colorScheme: ColorScheme.fromSwatch().copyWith(
           primary: Colors.blue,
-          secondary: Colors.red, 
+          secondary: Colors.red,
         ),
       ),
     );

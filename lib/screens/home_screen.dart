@@ -3,13 +3,11 @@ import 'package:movies/providers/movies_provider.dart';
 import 'package:movies/widgets/widgets.dart';
 import 'package:provider/provider.dart';
 
-
 class HomeScreen extends StatelessWidget {
   const HomeScreen({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-
     final moviesProvider = Provider.of<MoviesProvider>(context, listen: true);
 
     return Scaffold(
@@ -28,14 +26,13 @@ class HomeScreen extends StatelessWidget {
         child: Column(
           children: <Widget>[
             // Main cards
-            CardSwiper(
-              movies: moviesProvider.nowPlayingMovies
-            ),
+            CardSwiper(movies: moviesProvider.nowPlayingMovies),
 
             // Movie Slider
             MovieSlider(
               movies: moviesProvider.popularMovies,
-              title: 'Popular Movies!'
+              title: 'Popular Movies!',
+              onNextPage: () => moviesProvider.getPopularMovies(),
             ),
           ],
         ),
