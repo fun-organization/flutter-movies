@@ -4,6 +4,8 @@ import 'screens/screens.dart';
 
 import 'package:movies/providers/movies_provider.dart';
 
+// Some code hehe
+
 void main() => runApp(AppState());
 
 class AppState extends StatelessWidget {
